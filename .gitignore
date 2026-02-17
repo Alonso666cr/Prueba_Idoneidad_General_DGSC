@@ -1,0 +1,33 @@
+# Base de datos (se genera automáticamente)
+*.db
+dgsc_pro.db
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Entornos virtuales
+venv/
+env/
+ENV/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de respaldo
+*_old.py
+*_backup.py
+*.bak
+
+# PyCharm
+.idea/
+
+# VSCode
+.vscode/
