@@ -58,6 +58,14 @@ def inicializar_db():
             por_tema TEXT
         )
     ''')
+
+    # Limpiar registros corruptos (correctas/total guardados como bytes por error numpy)
+    cursor.execute("""
+        DELETE FROM historial 
+        WHERE typeof(correctas) != 'integer' OR typeof(total) != 'integer'
+           OR correctas IS NULL OR total IS NULL OR total = 0
+    """)
+
     conn.commit()
     conn.close()
 
@@ -199,7 +207,7 @@ TEMAS_INFO = {
     "5": "Ética y Valores en la Función Pública",
     "6": "Competencias Requeridas para Directivos Públicos",
     "7": "Elementos de Administración y Tendencias",
-    "SIGLAS": "Glosario de Siglas",
+    "8": "Glosario de Siglas",
 }
 
 # ============================================================
@@ -272,9 +280,16 @@ if st.session_state.modo is None:
             fecha = pd.to_datetime(row['fecha']).strftime("%d/%m/%Y %H:%M")
             modo_icon = "📚" if row['modo'] == 'estudio' else "⏱️"
             tiempo = formatear_tiempo(row['tiempo_usado']) if row['tiempo_usado'] else "N/A"
+            # Conversión segura: correctas y total pueden venir como bytes en SQLite
+            try:
+                correctas_val = int(row['correctas']) if row['correctas'] is not None else 0
+                total_val = int(row['total']) if row['total'] is not None else 0
+            except (TypeError, ValueError):
+                correctas_val = 0
+                total_val = 0
             st.markdown(f"""
             **{modo_icon} {row['modo'].title()}** - {fecha}  
-            Calificación: **{row['calificacion']:.1f}%** ({row['correctas']}/{row['total']}) | Tiempo: {tiempo}
+            Calificación: **{row['calificacion']:.1f}%** ({correctas_val}/{total_val}) | Tiempo: {tiempo}
             """)
         st.divider()
 
@@ -313,8 +328,17 @@ elif st.session_state.modo == 'estudio':
             )
 
         with col2:
-            st.subheader("📊 Banco de preguntas")
+
             conn = sqlite3.connect(DB_PATH)
+            cursor = conn.cursor()
+            
+            cursor.execute("SELECT COUNT(*) FROM preguntas")
+            total_general = cursor.fetchone()[0]
+            
+            st.subheader(f"📊 Banco de preguntas: {total_general}")
+            
+            #st.subheader("📊 Banco de preguntas")
+            #conn = sqlite3.connect(DB_PATH)
             stats_df = pd.read_sql_query(
                 "SELECT tema_num, COUNT(*) as total FROM preguntas GROUP BY tema_num", conn
             )
@@ -362,6 +386,17 @@ elif st.session_state.modo == 'estudio':
 
         if st.button("🏁 Terminar y ver resultados"):
             st.session_state.indice = total
+            st.rerun()
+
+        st.divider()
+        if st.button("🚪 Abandonar simulacro", use_container_width=True,
+                     help="Salir sin guardar resultados"):
+            for k in ["quiz_data", "indice", "respuestas", "feedback", "tiempo_inicio_estudio"]:
+                st.session_state.pop(k, None)
+            claves_rand = [k for k in st.session_state if k.startswith("opciones_") or k.startswith("radio_")]
+            for k in claves_rand:
+                del st.session_state[k]
+            st.session_state.modo = None
             st.rerun()
 
     if indice < total:
@@ -414,6 +449,13 @@ elif st.session_state.modo == 'estudio':
                     st.rerun()
     else:
         # Dashboard de resultados modo estudio
+        # Guardia: si no hay tiempo de inicio, el simulacro fue abandonado/corrompido
+        if "tiempo_inicio_estudio" not in st.session_state:
+            for k in ["quiz_data", "indice", "respuestas", "feedback"]:
+                st.session_state.pop(k, None)
+            st.session_state.modo = None
+            st.rerun()
+
         st.balloons()
         st.title("🎓 Resultados del Simulacro - Modo Estudio")
 
@@ -436,7 +478,7 @@ elif st.session_state.modo == 'estudio':
 
         # Guardar en historial
         stats_tema = res_df.groupby("tema")["es_correcta"].mean() * 100
-        guardar_historial('estudio', nota, int(tiempo_usado), ok, total_r, stats_tema.to_dict())
+        guardar_historial('estudio', float(nota), int(tiempo_usado), int(ok), int(total_r), stats_tema.to_dict())
 
         c1, c2, c3, c4 = st.columns(4)
         c1.metric("🏆 Calificación", f"{nota:.1f}%")
