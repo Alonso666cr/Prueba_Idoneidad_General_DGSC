@@ -33,15 +33,15 @@ Este proyecto se compromete a un ambiente respetuoso e inclusivo. Se espera:
 
 ### 1. 📝 Agregar Contenido (más impacto)
 
-El banco tiene 380 preguntas. El objetivo para v3.0 es llegar a **500+**. Los temas más prioritarios para nuevas preguntas son los que tienen menos cobertura relativa.
+El banco tiene 380 preguntas. El objetivo para v3.0 es llegar a **400+**. Los temas más prioritarios para nuevas preguntas son los que tienen menos cobertura relativa.
 
 ### 2. 🐛 Reportar Bugs
 
-¿Encontraste un error? [Abre un Issue](https://github.com/TU-USUARIO/dgsc-quiz/issues/new) con la etiqueta `bug`.
+¿Encontraste un error? [Abre un Issue](https://github.com/Alonso666cr/Prueba_Idoneidad_General_DGSC/issues/new) con la etiqueta `bug`.
 
 ### 3. 💡 Sugerir Mejoras
 
-¿Tienes una idea? [Abre un Issue](https://github.com/TU-USUARIO/dgsc-quiz/issues/new) con la etiqueta `enhancement`.
+¿Tienes una idea? [Abre un Issue](https://github.com/Alonso666cr/Prueba_Idoneidad_General_DGSC/issues/new) con la etiqueta `enhancement`.
 
 ### 4. 📚 Mejorar Documentación
 
@@ -59,11 +59,11 @@ Probar en distintos navegadores y dispositivos, reportar comportamientos inesper
 # 1. Fork del repositorio en GitHub
 
 # 2. Clonar tu fork
-git clone https://github.com/TU-USUARIO/dgsc-quiz.git
-cd dgsc-quiz
+git clone https://github.com/Alonso666cr/Prueba_Idoneidad_General_DGSC.git
+cd Prueba_Idoneidad_General_DGSC
 
 # 3. Agregar el upstream
-git remote add upstream https://github.com/AUTOR-ORIGINAL/dgsc-quiz.git
+git remote add upstream https://github.com/Alonso666cr/Prueba_Idoneidad_General_DGSC.git
 
 # 4. Crear rama de trabajo
 git checkout main
@@ -322,7 +322,7 @@ Todos los contribuidores serán reconocidos en el README con su usuario de GitHu
 
 ## ❓ ¿Dudas?
 
-Abre un Issue con la etiqueta `question` en [GitHub Issues](https://github.com/TU-USUARIO/dgsc-quiz/issues).
+Abre un Issue con la etiqueta `question` en [GitHub Issues](https://github.com/Alonso666cr/Prueba_Idoneidad_General_DGSC/issues).
 
 ---
 

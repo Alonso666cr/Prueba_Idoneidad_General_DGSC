@@ -11,9 +11,8 @@ Este software es un **proyecto académico de código abierto** desarrollado de m
 | Campo | Detalle |
 |---|---|
 | **Tipo** | Proyecto académico personal, código abierto |
-| **Autor** | Apache |
-| **Institución** | Universidad del Rosario, Bogotá, Colombia |
-| **Programa** | Maestría en Matemáticas Aplicadas y Ciencias de la Computación |
+| **Autor** | Ing. Andrés Cervantes |
+| **Ubicación** | Guápiles, Costa Rica |
 | **Especialización** | Inteligencia Artificial |
 | **Licencia** | MIT License |
 | **Autoría** | Perpetua e irrenunciable del autor |
@@ -75,7 +74,7 @@ Este proyecto **NO contiene:**
 El software se proporciona **"tal cual"** sin garantías de ningún tipo. El autor **NO GARANTIZA:**
 
 - Exactitud o completitud de la información
-- Actualización del contenido (el manual puede haber cambiado desde 2019)
+- Actualización del contenido (el manual puede haber cambiado o podrá hacerlo desde 2019)
 - Ausencia de errores tipográficos o conceptuales
 - Correspondencia exacta con exámenes oficiales actuales
 - Validez legal o técnica de las respuestas
@@ -97,6 +96,15 @@ Este simulador es una **herramienta complementaria** de estudio. **NO:**
 - Las leyes, normas y reglamentos costarricenses pueden haber cambiado
 - La DGSC puede haber actualizado sus procedimientos o requisitos
 - Verifica la información actualizada en el Sistema Costarricense de Información Jurídica y en La Gaceta Oficial
+
+### 4. Limitación en la arquitectura de la ppp
+
+- Esta aplicación fue pensada para correr en un ambiente local.
+- La demo https://pruebageneraldgsc.streamlit.app/ si bien es la app completa, tiene problemas si hay muchos usuarios conectados concurrentemente.
+- La app hace uso de lectura de SQLite para obtener el cuestionario de preguntas, pero escribe el historial en otra tabla separada.
+
+Dependiendo de los comentarios, solicitudes y acogida por la comunidad, podría hacer una versión escalada usando una base de datos relacional y corriendo en un dominio indenpendiente
+de de la nube de streamlit.
 
 ---
 
@@ -141,7 +149,7 @@ El autor **no es responsable** por resultados en exámenes oficiales, decisiones
 
 ## 📜 Propiedad Intelectual y Autoría
 
-El autor conserva la **autoría perpetua e irrenunciable** sobre este proyecto, incluyendo el código fuente, la estructura de la aplicación, el diseño pedagógico del banco de preguntas y la documentación.
+El autor conserva la **autoría perpetua e irrenunciable** sobre este proyecto, incluyendo el código fuente, la estructura de la aplicación, el diseño pedagógico del banco de preguntas, la documentación, actualizaciones e incluso cerrar definitivamente el repositorio cuando lo considere oportuno.
 
 La distribución bajo Licencia MIT permite el uso, modificación y redistribución del código siempre que se conserve el aviso de copyright original. Ningún uso derivado puede reclamar autoría sobre el trabajo original.
 
@@ -157,8 +165,8 @@ Al usar este software, el usuario reconoce haber leído este disclaimer, acepta 
 
 Para asuntos relacionados con este disclaimer o el proyecto:
 
-- **GitHub Issues:** [github.com/TU-USUARIO/dgsc-quiz/issues](https://github.com/TU-USUARIO/dgsc-quiz/issues)
-- **Email:** [Tu email]
+- **GitHub Issues:** [github.com/Alonso666cr/Prueba_Idoneidad_General_DGSC/issues](https://github.com/Alonso666cr/Prueba_Idoneidad_General_DGSC/issues)
+- **Email:** [alonso666cr@hotmail.com]
 
 ---
 

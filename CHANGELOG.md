@@ -4,7 +4,7 @@
 
 ## v2.0 — Modo Examen Real + 380 Preguntas
 **Fecha:** 20 de febrero de 2026  
-**Autor:** Apache
+**Autor:** Ing. Andrés Cervantes
 
 ---
 
@@ -112,69 +112,10 @@ CREATE TABLE historial (
 | 5 — Ética y Valores | 36 | 38 | +2 |
 | 6 — Competencias Directivos | 20 | 36 | +16 |
 | 7 — Administración y Tendencias | 20 | 46 | +26 |
-| S — Glosario de Siglas | 10 | 38 | +28 |
+| 8 — Glosario de Siglas | 10 | 38 | +28 |
 | **TOTAL** | **246** | **380** | **+134** |
 
-*El Tema 4 fue revisado y depurado eliminando preguntas duplicadas o con errores de referencia.
-
 Cada pregunta incluye: enunciado, respuesta correcta, 3 distractores plausibles, justificación con cita textual del manual y número de página exacto.
-
----
-
-### 🐛 Correcciones de Bugs
-
-#### Bug crítico: valores binarios en historial
-
-**Síntoma:** El historial mostraba `b'\x01\x00\x00\x00\x00\x00\x00\x00'` en lugar del número de respuestas correctas.
-
-**Causa raíz:** Los valores `correctas` y `total` provenían de operaciones `.sum()` y `.count()` de Pandas, que retornan `numpy.int64`. SQLite los serializaba como blob binario en lugar de integer.
-
-**Corrección (`app.py` línea 448):**
-```python
-# Antes (buggy)
-guardar_historial('estudio', nota, int(tiempo_usado), ok, total_r, ...)
-
-# Ahora (corregido)
-guardar_historial('estudio', float(nota), int(tiempo_usado), int(ok), int(total_r), ...)
-```
-
-**Corrección adicional** en visualización del historial: conversión defensiva con `try/except` antes de mostrar los valores.
-
----
-
-#### Bug: sesiones incompletas guardadas en historial
-
-**Síntoma:** Al volver al menú desde un simulacro a mitad sin terminarlo, el sistema guardaba el resultado parcial con datos incorrectos.
-
-**Causa raíz:** No existía botón de salida limpio dentro del quiz activo. El flujo de estado quedaba inconsistente al cambiar `modo = None` sin limpiar `quiz_data`.
-
-**Corrección:**
-- Añadido botón **"🚪 Abandonar simulacro"** en el sidebar del Modo Estudio que elimina todo el estado antes de volver al menú
-- Añadida guardia al inicio del bloque de resultados del Modo Estudio:
-```python
-if "tiempo_inicio_estudio" not in st.session_state:
-    # Estado corrupto — limpiar y redirigir al menú
-    for k in ["quiz_data", "indice", "respuestas", "feedback"]:
-        st.session_state.pop(k, None)
-    st.session_state.modo = None
-    st.rerun()
-```
-
----
-
-#### Bug: registros corruptos en la base de datos
-
-**Síntoma:** Registros con `correctas` o `total` almacenados como blob binario persistían entre sesiones.
-
-**Corrección:** `inicializar_db()` ejecuta un `DELETE` al arrancar:
-```sql
-DELETE FROM historial 
-WHERE typeof(correctas) != 'integer' 
-   OR typeof(total) != 'integer'
-   OR correctas IS NULL 
-   OR total IS NULL 
-   OR total = 0
-```
 
 ---
 
@@ -250,7 +191,7 @@ streamlit run app.py
 
 <div align="center">
 
-**Desarrollado por Apache | Universidad del Rosario | 2026**
+**Desarrollado por Ing. Andrés Cervantes | 2026**
 
 [⬆ Volver al README](README.md)
 

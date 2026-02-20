@@ -9,7 +9,7 @@
 ![Preguntas](https://img.shields.io/badge/preguntas-380-brightgreen.svg)
 ![Versión](https://img.shields.io/badge/versión-2.0-orange.svg)
 
-**Herramienta de estudio interactiva para aspirantes a puestos de dirección en el Servicio Civil de Costa Rica**
+**Herramienta de estudio interactiva para aspirantes a puestos profesionales en el Servicio Civil de Costa Rica**
 
 [📱 Demo en Vivo](#) · [📚 Documentación](#contenido-académico) · [🤝 Contribuir](CONTRIBUTING.md) · [⚖️ Disclaimer](DISCLAIMER.md)
 
@@ -37,7 +37,7 @@
 
 ## 📖 Descripción del Proyecto
 
-**Simulador DGSC** es una aplicación web interactiva de código abierto diseñada para facilitar el estudio y preparación de aspirantes a puestos de dirección pública en Costa Rica. Con **380 preguntas** distribuidas en 8 temas, cubre íntegramente el contenido del *Manual de Orientación para el Ingreso y Ejercicio de Puestos de Dirección Pública* (DGSC, versión 1, enero 2019).
+**Simulador DGSC** es una aplicación web interactiva de código abierto diseñada para facilitar el estudio y preparación de aspirantes a puestos profesionales en el sector público en Costa Rica. Con **380 preguntas** distribuidas en 8 temas, cubre íntegramente el contenido del *Manual de Orientación para el Ingreso y Ejercicio de Puestos de Dirección Pública* (DGSC, versión 1, enero 2019).
 
 La versión 2.0 añade un **Modo Examen Real** con cronómetro, navegación avanzada, historial persistente de sesiones y análisis de resultados por tema — replicando las condiciones del examen oficial.
 
@@ -151,7 +151,7 @@ banco_preguntas.py    dgsc_pro.db (SQLite)
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/TU-USUARIO/dgsc-quiz.git
+git clone https://github.com/Alonso666cr/Prueba_Idoneidad_General_DGSC.git
 cd dgsc-quiz
 
 # 2. (Recomendado) Crear entorno virtual
@@ -228,7 +228,7 @@ dgsc-quiz/
 | 5 | Ética y Valores en la Función Pública | 38 | pp. 50–61 |
 | 6 | Competencias Requeridas para Directivos Públicos | 36 | pp. 62–68 |
 | 7 | Elementos Generales de Administración y Tendencias | 46 | pp. 69–77 |
-| S | Glosario de Siglas y Acrónimos | 38 | p. 2 + barrido completo |
+| 8 | Glosario de Siglas y Acrónimos | 38 | p. 2 + barrido completo |
 | **TOTAL** | | **380** | |
 
 ### Distribución por Dificultad
@@ -311,7 +311,7 @@ git push origin feature/mi-mejora
 
 Distribuido bajo la **Licencia MIT**. Ver [LICENSE](LICENSE) para detalles.
 
-El autor conserva la autoría perpetua del proyecto. El código puede ser usado, modificado y distribuido libremente siempre que se conserve el aviso de copyright original.
+El autor conserva la autoría perpetua del proyecto. El código puede ser usado, modificado y distribuido libremente siempre que se conserve el aviso de copyright original del Ing. Andrés Cervantes.
 
 ---
 
@@ -327,29 +327,28 @@ Ver [DISCLAIMER.md](DISCLAIMER.md) para el texto legal completo.
 
 ## 👤 Contacto
 
-**Autor:** Apache  
-**Institución:** Universidad del Rosario — Bogotá, Colombia  
-**Programa:** Maestría en Matemáticas Aplicadas y Ciencias de la Computación (Especialización IA)
+**Autor:** Ing. Andrés Cervantes.   
+**Ubicación:** Guápiles, Costa Rica
+**Profesión:** Licenciatura en Ingenieria de Sistemas (UACA) y Maestría en Matemáticas Aplicadas y Ciencias de la Computación (Especialización IA) URosario, Bogotá, Colombia.
 
 | Canal | Link |
 |---|---|
 | 🌐 Sitio Web | [mindforce.cloud](https://mindforce.cloud) |
-| 💼 LinkedIn | [Tu perfil] |
-| 📧 Email | [Tu email] |
-| 🐙 GitHub | [@TU-USUARIO](https://github.com/TU-USUARIO) |
+| 💼 LinkedIn | [https://www.linkedin.com/in/andres-cervantes-torres/] |
+| 📧 Email | [alonso666cr@hotmail.com] |
+| 🐙 GitHub | [@Alonso666cr](https://github.com/Alonso666cr) |
 
 ### Cita Académica (BibTeX)
 
 ```bibtex
-@software{apache_dgsc_simulator_2026,
-  author       = {Apache},
+@software{Prueba_Idoneidad_General_DGSC,
+  author       = {Ing. Andrés Cervantes},
   title        = {{Simulador DGSC: Herramienta Educativa Interactiva
                    para Preparación de Exámenes del Servicio Civil de Costa Rica}},
   year         = {2026},
   version      = {2.0},
   publisher    = {GitHub},
-  url          = {https://github.com/TU-USUARIO/dgsc-quiz},
-  institution  = {Universidad del Rosario, Colombia},
+  url          = {https://github.com/Alonso666cr/Prueba_Idoneidad_General_DGSC},
   license      = {MIT},
   note         = {380 preguntas basadas en Manual DGSC 2019. 
                   Incluye Modo Examen Real con cronómetro e historial persistente.}
@@ -369,10 +368,25 @@ Ver [DISCLAIMER.md](DISCLAIMER.md) para el texto legal completo.
 
 <div align="center">
 
-![GitHub stars](https://img.shields.io/github/stars/TU-USUARIO/dgsc-quiz?style=social)
-![GitHub forks](https://img.shields.io/github/forks/TU-USUARIO/dgsc-quiz?style=social)
+![GitHub stars](https://img.shields.io/github/stars/Alonso666cr/Prueba_Idoneidad_General_DGSC?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Alonso666cr/Prueba_Idoneidad_General_DGSC?style=social)
 
 **Hecho con ❤️ para la comunidad académica y los aspirantes al servicio público costarricense**
+
+**A la sociedad Costarricense**
+Después de pasar por el proceso de prepración y estudio para enfrentar esta prueba, pude comprender que muchas personas subestiman esta prueba.
+Comentarios como "eso es fácil, es como una clase de civica", se quedan muy lejos de la realidad de la prueba cuando la estás enfrentando en los
+laboratorios de ls DGSC.
+Afortunadamente logré aprobar, pero esta experiencia me ayudo no solo a aprender de temas que desconocía completamente y que como costarricense,
+definitivamente debía al menos poder parafrasear, si no, que había una oportunidad para tomar todo este aprendizaje y desarrollar una herramienta
+que ayude a los profesionales convocados por la DGSC a complementar el proceso de aprendizaje y entrenamiento previo a la prueba oficial.
+
+Soy un profesional apasionado por el desarrollo de software, la automatización de procesos y especialista en IA, por lo que no dudé un segundo en
+ponerme manos a la obra para desarrollar esta aplicación para compartirla con la comunidad.
+
+Espero que esto les ayude mucho en su proceso y con ello logren superar esta prueba tan importante para nuestra vida laboral y profesional.
+
+Tender puentes y hacer sencillo para otros lo que para ti fue complejo, es aplicar la lógica y la experiencia para el beneficio del prójimo. ATT: Ing. ACT.
 
 ⭐ Si este proyecto te resultó útil, dale una estrella en GitHub
 
