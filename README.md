@@ -374,6 +374,7 @@ Ver [DISCLAIMER.md](DISCLAIMER.md) para el texto legal completo.
 **Hecho con ❤️ para la comunidad académica y los aspirantes al servicio público costarricense**
 
 **A la sociedad Costarricense**
+
 Después de pasar por el proceso de prepración y estudio para enfrentar esta prueba, pude comprender que muchas personas subestiman esta prueba.
 Comentarios como "eso es fácil, es como una clase de civica", se quedan muy lejos de la realidad de la prueba cuando la estás enfrentando en los
 laboratorios de ls DGSC.
