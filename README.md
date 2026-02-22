@@ -39,6 +39,10 @@
 
 **Simulador DGSC** es una aplicación web interactiva de código abierto diseñada para facilitar el estudio y preparación de aspirantes a puestos profesionales en el sector público en Costa Rica. Con **380 preguntas** distribuidas en 8 temas, cubre íntegramente el contenido del *Manual de Orientación para el Ingreso y Ejercicio de Puestos de Dirección Pública* (DGSC, versión 1, enero 2019).
 
+https://www.dgsc.go.cr/documentos/reclutamiento/materialPrueba/Manual%20Orientacion%20Puestos%20Publicos%20-%202019.pdf
+
+Tome en cuenta que dentro del modo de estudio, si seleccionas una respuesta errónea, el sistema te dirá en cuál página del manual oficial de la DGSC está la respuesta correcta. Indicará el número de página, siendo esta determinada por la totalidad del documento físico, no por el índice.
+
 La versión 2.0 añade un **Modo Examen Real** con cronómetro, navegación avanzada, historial persistente de sesiones y análisis de resultados por tema — replicando las condiciones del examen oficial.
 
 ### 🎯 Objetivos Académicos
